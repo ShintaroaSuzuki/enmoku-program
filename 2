@@ -11,7 +11,6 @@ import Program from "@/components/sections/Program"
 import History from "@/components/sections/History"
 import Greeting from "@/components/sections/Greeting"
 import { Questionnaire } from "@/components/Questionnaire"
-import LPBanner from "@/components/LPBanner"
 
 const Home: NextPage = () => {
   const modalState = useRecoilValue(modalStateAtom)
@@ -72,11 +71,9 @@ const Home: NextPage = () => {
 
         <Questionnaire />
 
-        <a href={'https://lin.ee/r0j6n8D'} target="_blank" rel="noopener noreferrer">
+        <a href={'https://lin.ee/r0j6n8D'} className="my-80" target="_blank" rel="noopener noreferrer">
           <Image src='/line_banner.png' alt='line banner' width={320} height={168} quality={100}/>
         </a>
-
-        <LPBanner />
 
       </main>
 

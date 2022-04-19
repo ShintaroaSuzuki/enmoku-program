@@ -1,0 +1,140 @@
+.container {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  width: 320px;
+  height: 420px;
+  border: 1px solid rgba(151, 154, 155, 0.95);
+  border-radius: 8px;
+}
+
+.slideWrapper {
+  width: inherit;
+  height: inherit;
+  position: absolute;
+  overflow: hidden;
+}
+
+.slideContainer {
+  position: absolute;
+  width: calc(320px - 16px * 2);
+  height: calc(420px - 16px * 2);
+  left: 0;
+  right: 0;
+  margin: 16px auto;
+}
+
+.questionLabel {
+  font-style: italic;
+  font-size: 20px;
+  font-weight: 800;
+  margin-bottom: 4px;
+}
+
+.questionTitle {
+  font-size: 16px;
+}
+
+.answerContainer {
+  display: flex;
+  flex-direction: column;
+  margin: 16px auto;
+  align-items: center;
+  row-gap: 8px;
+  width: 100%;
+}
+
+.radioButtonContainer {
+  // background-color: #EBF8F5;
+  // border: 2px solid #3DB6AE;
+  background-color: #EDEFFF;
+  border: 2px solid #5464F3;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-radius: 8px;
+  width: 220px;
+  height: 40px;
+  display: flex;
+}
+
+.radioButtonCircle {
+  // background-color: #fff;
+  // border: 2px solid #3DB6AE;
+  background-color: #fff;
+  border: 2px solid #5464F3;
+  display: flex;
+  height: 18px;
+  border-radius: 24px;
+  width: 18px;
+  margin: 0 12px;
+}
+
+.radioButtonTitle {
+  color: #000;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  display: inline-block;
+  font-size: 14px;
+}
+
+.back {
+  position: absolute;
+  bottom: 0;
+  padding-bottom: 4px;
+  color: rgba(151, 154, 155, 0.95);
+}
+
+.submit {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding: 8px;
+  width: 72px;
+  text-align: center;
+  font-weight: 600;
+  border-radius: 8px;
+}
+
+.textarea {
+  // background-color: #EBF8F5;
+  // border: 2px solid #3DB6AE;
+  background-color: #EDEFFF;
+  border: 2px solid #5464F3;
+  display: flex;
+  border-radius: 8px;
+  padding: 8px;
+  width: 280px;
+  height: 160px;
+  color: #000;
+  caret-color: #000;
+}
+
+.input {
+  // background-color: #EBF8F5;
+  // border: 2px solid #3DB6AE;
+  background-color: #EDEFFF;
+  border: 2px solid #5464F3;
+  display: flex;
+  border-radius: 8px;
+  padding: 8px;
+  width: 280px;
+  height: 40px;
+  color: #000;
+  caret-color: #000;
+  margin-top: 60px;
+}
+
+.thanksPageContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px;
+
+  p {
+    margin-top: 40px;
+  }
+
+  a {
+    margin-top: 60px;
+  }
+}
