@@ -20,7 +20,7 @@ const Modal = ({ items }: ModalProps) => {
           </div>
         <ul className="pl-5">
           {
-            items.map((item, key) => <li className="list-disc" key={`modalList_${key}`}>{item.body}</li>) 
+            items.map((item, key) => <li className="list-disc text-sm" key={`modalList_${key}`}>{item.body}</li>) 
           }
         </ul>
       </div>
