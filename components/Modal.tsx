@@ -24,7 +24,7 @@ const Modal = ({ items }: ModalProps) => {
           }
         </ul>
       </div>
-      <button onClick={_onClick} className="bg-blue-900 text-white w-5/6 h-10 font-bold my-20">
+      <button onClick={_onClick} className="bg-blue-900 text-white w-5/6 h-10 font-bold my-10">
         確認しました
       </button>
     </div>

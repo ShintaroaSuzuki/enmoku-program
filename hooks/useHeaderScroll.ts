@@ -2,7 +2,7 @@ import { useEffect, useState, useRef } from 'react'
 
 const useHeaderScroll = (activePoint: number): boolean => {
   const [isHeaderActive, setIsHeaderActive] = useState<boolean>(false)
-  const postScroll = useRef<number>(0)
+  const postScroll = useRef<number>(600)
 
   useEffect(() => {
     const scrollWindow = () => {
@@ -17,7 +17,7 @@ const useHeaderScroll = (activePoint: number): boolean => {
           setIsHeaderActive(true)
         }
       } else {
-        setIsHeaderActive(true)
+        setIsHeaderActive(false)
       }
     }
     
