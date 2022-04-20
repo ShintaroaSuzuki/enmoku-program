@@ -11,7 +11,7 @@ const Modal = ({ items }: ModalProps) => {
   }
 
   return (
-    <div className="w-screen min h-screen flex flex-col items-center py-10">
+    <div className="w-screen min-h-screen flex flex-col items-center py-10">
       <div className="w-3/4">
         <h1 className="text-center text-2xl font-bold mb-5">ご鑑賞に際してのお願い</h1>
           <p className="font-bold">会場ではマナーモードのご協力をよろしくお願いいたします。</p>
@@ -24,7 +24,7 @@ const Modal = ({ items }: ModalProps) => {
           }
         </ul>
       </div>
-      <button onClick={_onClick} className="bg-blue-900 text-white w-5/6 h-20 font-bold my-20">
+      <button onClick={_onClick} className="bg-blue-900 text-white w-5/6 h-10 font-bold my-20">
         確認しました
       </button>
     </div>
