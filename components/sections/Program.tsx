@@ -6,7 +6,7 @@ const Program = ({ items }: { items: ProgramItemProps[] }) => {
   return (
     <div className="my-20 flex flex-col items-center">
       <SectionTitle text={'プログラム'} />
-      <div className="flex flex-col w-3/4 gap-y-2.5">
+      <div className="flex flex-col w-5/6 gap-y-2.5">
         {
           items.map((item, key) => 
             <ProgramItem key={`programItem_${key}`} item={item} />    
