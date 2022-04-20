@@ -12,6 +12,7 @@ const Header = () => {
   return (
     <motion.div
       className="fixed w-screen flex items-center justify-center h-12 bg-white drop-shadow-lg z-10"
+      initial='closed'
       animate={isHeaderActive ? 'open' : 'closed'}
       variants={variants}
     >
