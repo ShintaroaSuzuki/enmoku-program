@@ -1,3 +1,5 @@
 export * from './ProgramItemProps'
 export * from './GreetingItemProps'
 export * from './HistoryItemProps'
+export * from './LineBannerProps'
+export * from './ModalProps'

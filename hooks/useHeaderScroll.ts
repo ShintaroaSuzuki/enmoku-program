@@ -27,7 +27,7 @@ const useHeaderScroll = (activePoint: number): boolean => {
     }
   }, [activePoint])
 
-  return { isHeaderActive }
+  return isHeaderActive
 }
 
 export default useHeaderScroll

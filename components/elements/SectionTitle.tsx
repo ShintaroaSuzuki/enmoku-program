@@ -1,7 +1,7 @@
 const SectionTitle = ({ text }: { text: string }) => {
   return (
     <>
-      <h2 className="font-bold text-2xl leading-10">
+      <h2 className="font-bold text-xl my-10 text-center">
         { text }
       </h2>
     </>

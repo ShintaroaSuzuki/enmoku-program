@@ -23,6 +23,7 @@
       "@/src/*": ["src/*"],
       "@/stores/*": ["stores/*"],
       "@/hooks/*": ["hooks/*"],
+      "@/lib/*": ["lib/*"],
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],

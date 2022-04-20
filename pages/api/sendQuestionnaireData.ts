@@ -1,6 +1,6 @@
 import { NextApiRequest, NextApiResponse } from 'next'
 import requestIp from 'request-ip'
-import { sendQuestionnaireData } from '@/lib/firebase'
+import { sendQuestionnaireData } from '@/lib/handleSupabase'
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   const clientIp = requestIp.getClientIp(req) || "IP_NOT_FOUND";

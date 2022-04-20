@@ -7,11 +7,11 @@ const variants = {
 }
 
 const Header = () => {
-  const { isHeaderActive } = useHeaderScroll(100)
+  const isHeaderActive = useHeaderScroll(100)
 
   return (
     <motion.div
-      className="fixed"
+      className="fixed w-screen flex items-center justify-center h-12 bg-white drop-shadow-lg z-10"
       animate={isHeaderActive ? 'open' : 'closed'}
       variants={variants}
     >

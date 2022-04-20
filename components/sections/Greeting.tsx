@@ -4,13 +4,15 @@ import { GreetingItemProps } from "@/types"
 
 const Program = ({ items }: { items: GreetingItemProps[] }) => {
   return (
-    <div className="my-10">
+    <div className="my-20 flex flex-col items-center">
       <SectionTitle text={'ごあいさつ'} />
-      {
-        items.map((item, key) => 
-          <GreetingItem key={`greetingItem_${key}`} item={item} />    
-        )
-      }
+      <div className="flex flex-col gap-y-10 w-5/6">
+        {
+          items.map((item, key) => 
+            <GreetingItem key={`greetingItem_${key}`} item={item} />    
+          )
+        }
+      </div>
     </div>
   )
 }
