@@ -36,9 +36,15 @@ const Home: NextPage = () => {
         <meta name="description" content="第16回 屯田西小学校 卒業定期演奏会" />
       </Head>
 
-      <Header />
+      <Header 
+        links={[
+          { id: 'program', title: 'プログラム'},   
+          { id: 'history', title: '１年間の歩み'},  
+          { id: 'greeting', title: 'ごあいさつ'}   
+        ]}
+      />
 
-      <main className="w-5/6 mt-20">
+      <main className="w-5/6 mt-10">
 
         <Title text={'第16回 ブラスバンド\n卒業定期演奏会'} />
 

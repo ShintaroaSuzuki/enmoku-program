@@ -15,8 +15,8 @@ const Modal = ({ items }: ModalProps) => {
       <div className="w-3/4">
         <h1 className="text-center text-2xl font-bold mb-5">ご鑑賞に際してのお願い</h1>
           <p className="font-bold">会場ではマナーモードのご協力をよろしくお願いいたします。</p>
-          <div className="w-full flex flex-col items-center my-10">
-            <VolumeSlash size={72} color={'rgb(220, 38, 38)'}/>
+          <div className="w-full flex flex-col items-center my-16">
+            <VolumeSlash size={72} color={'rgb(155, 155, 155)'}/>
           </div>
         <ul className="pl-5">
           {
@@ -24,7 +24,7 @@ const Modal = ({ items }: ModalProps) => {
           }
         </ul>
       </div>
-      <button onClick={_onClick} className="bg-blue-900 text-white w-5/6 h-10 font-bold my-10">
+      <button onClick={_onClick} className="bg-blue-900 text-white w-3/4 h-10 font-bold my-10">
         確認しました
       </button>
     </div>
