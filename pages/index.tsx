@@ -44,7 +44,7 @@ const Home: NextPage = () => {
         ]}
       />
 
-      <main className="w-5/6 mt-10">
+      <main className="w-5/6 mt-10 flex flex-col items-center">
 
         <Title text={'第16回 ブラスバンド\n卒業定期演奏会'} />
 

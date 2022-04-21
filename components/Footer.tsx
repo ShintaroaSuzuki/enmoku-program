@@ -3,7 +3,7 @@ import Image from 'next/image'
 
 const Footer = () => {
   return (
-    <footer className="flex flex-col items-center gap-y-2 my-10">
+    <footer className="flex flex-col items-center gap-y-2 mt-20 mb-10">
       <Link href="https://nonab.super.site" passHref>
         <div className="flex flex-col items-center">
           <Image src="/nonab_logo_transparent_gray.png" alt="home footer image" width={1892/24} height={566/24}/>
