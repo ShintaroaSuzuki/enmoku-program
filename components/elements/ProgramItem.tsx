@@ -26,9 +26,9 @@ const ProgramItem = ({ item }: { item: ProgramItemProps }) => {
   }
 
   return (
-    <>
+    <div>
       {ItemComponent()}
-    </>
+    </div>
   )
 }
 

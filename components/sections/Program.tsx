@@ -4,7 +4,7 @@ import { ProgramItemProps } from "@/types"
 
 const Program = ({ items }: { items: ProgramItemProps[] }) => {
   return (
-    <div className="my-20 pt-10 pb-16 flex flex-col items-center bg-white drop-shadow rounded-md" data-aos="fade-up">
+    <div className="w-full my-20 pt-10 pb-16 flex flex-col items-center bg-white drop-shadow rounded-md" data-aos="fade-up">
       <SectionTitle text={'プログラム'} id={'program'} />
       <div className="flex flex-col w-5/6 gap-y-2.5">
         {
