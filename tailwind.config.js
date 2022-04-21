@@ -7,4 +7,7 @@ module.exports = {
     extend: {},
   },
   plugins: [],
+  options: {
+    whitelistPatterns: ["./node_modules/aos/dist/aos.css"]
+  }
 }

@@ -4,7 +4,7 @@ import { HistoryItemProps } from '@/types'
 
 const History = ({ items }: { items: HistoryItemProps[] }) => {
   return (
-    <div className="my-20 flex flex-col items-center">
+    <div className="my-20 pt-10 pb-16 flex flex-col items-center bg-white drop-shadow rounded-md" data-aos="fade-up">
       <SectionTitle text={'１年間の歩み'} id={'history'}/>
       <div className="flex flex-col gap-y-6 w-5/6">
         {
