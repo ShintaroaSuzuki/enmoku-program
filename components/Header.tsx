@@ -51,11 +51,11 @@ const Header = ({ links }: HeaderProps) => {
               variants={menuVariants}
               transition={{ type: "tween", duration: 0.2 }}
             >
-              <nav className="flex flex-col gap-y-2">
+              <nav className="flex flex-col w-full">
                 {
                   links.map((link, key) => 
                     <Scroll to={link.id} key={`linkItem_${key}`} smooth={true} offset={-80}>
-                      <p className="relative text-sm text-neutral-700">{link.title}</p>
+                      <p className="relative text-sm my-2 text-neutral-700">{link.title}</p>
                     </Scroll>
                   )
                 }
