@@ -16,7 +16,7 @@ import LPBanner from "@/components/LPBanner"
 const Home: NextPage = () => {
   const modalState = useRecoilValue(modalStateAtom)
 
-  const lineHref = "https://lin.ee/r0j6n8D"
+  const lineHref = "https://lin.ee/MlAnTvq"
 
   if (modalState) return (
     <Modal
