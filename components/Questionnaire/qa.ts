@@ -22,52 +22,6 @@ const qa: QA[] = [
     questionType: 'select',
     multi: false,
     choices: [
-      {
-        value: 'はい',
-        questions: [
-          {
-            title: 'あなたは成人していますか？',
-            questionType: 'select',
-            multi: false,
-            choices: [
-              { 
-                value: 'はい',
-                questions: [
-                  {
-                    title: '今晩の予定はありますか？',
-                    questionType: 'select',
-                    multi: false,
-                    choices: [
-                      { value: 'はい' },
-                      { value: 'いいえ',
-                        questions: [
-                          {
-                            title: '打ち上げに行きましょう！',
-                            questionType: 'select',
-                            multi: false,
-                            choices: [
-                              { value: 'はい' },
-                              { value: 'いいえ' }
-                            ],
-                            required: true,
-                            answer: []
-                          }
-                        ]
-                      } 
-                    ],
-                    required: true,
-                    answer: []
-                  }
-                ]
-              },
-              { value: 'いいえ' }
-            ],
-            required: true,
-            answer: []
-          }
-        ]
-      },
-      { value: 'いいえ'}
     ],
     required: true,
     answer: []

@@ -2,12 +2,12 @@ import styles from './Questionnaire.module.scss'
 import { RecoilRoot } from 'recoil'
 import { Slide } from './Slide'
 
-const Component = () => {
+const Component = ({ lineHref }: { lineHref: string; }) => {
 
   return (
     <RecoilRoot>
       <div className={styles.container}>
-        <Slide />
+        <Slide lineHref={lineHref}/>
       </div>
     </RecoilRoot>
   )

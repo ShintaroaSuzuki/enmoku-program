@@ -41,7 +41,7 @@ const variants = {
   }
 }
 
-export const Slide = () => {
+export const Slide = ({ lineHref }: { lineHref: string; }) => {
   const resetQaState = useResetRecoilState(qaStateAtom)
   const resetSlideState = useResetRecoilState(slideStateAtom)
   const resetSubmittedState = useResetRecoilState(submittedStateAtom)
@@ -56,7 +56,7 @@ export const Slide = () => {
     resetSubmittedState()
   }, [resetQaState, resetSlideState, resetSubmittedState])
 
-  if (submittedState) return <ThanksPage />
+  if (submittedState) return <ThanksPage lineHref={lineHref}/>
 
   return (
     <div className={styles.slideWrapper}>
@@ -81,7 +81,7 @@ export const Slide = () => {
           <Title />
           <Answer />
           <BackButton />
-          <NextButton />
+          <NextButton/>
         </motion.div>
       </AnimatePresence>
     </div>
