@@ -29,6 +29,10 @@ const Header = ({ links }: HeaderProps) => {
     }, [isHeaderActive]
   )
 
+  const returnTop = () => {
+    animateScroll.scrollToTop()
+  }
+
   useEffect(() => {
     hideMenu()
   }, [hideMenu])
@@ -70,7 +74,7 @@ const Header = ({ links }: HeaderProps) => {
         </div>
       }
       <div className="flex flex-row items-center w-full px-4 justify-between">
-        <p className="font-bold">{'第16回ブラスバンド卒業定期演奏会'}</p>
+        <p onClick={returnTop} className="font-bold w-full">{'第16回ブラスバンド卒業定期演奏会'}</p>
         <div>
           <svg onClick={handleMenu} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" width="24" height="24" stroke={'rgba(55, 55, 55, 0.7)'}>
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"></path>
