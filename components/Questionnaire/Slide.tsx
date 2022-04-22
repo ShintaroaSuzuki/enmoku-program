@@ -42,19 +42,20 @@ const variants = {
 }
 
 export const Slide = ({ lineHref }: { lineHref: string; }) => {
+  const slideState = useRecoilValue(slideStateAtom)
+  const submittedState = useRecoilValue(submittedStateAtom)
+
+  /*
   const resetQaState = useResetRecoilState(qaStateAtom)
   const resetSlideState = useResetRecoilState(slideStateAtom)
   const resetSubmittedState = useResetRecoilState(submittedStateAtom)
-
-  const slideState = useRecoilValue(slideStateAtom)
-
-  const submittedState = useRecoilValue(submittedStateAtom)
 
   useEffect(() => {
     resetSlideState()
     resetQaState()
     resetSubmittedState()
   }, [resetQaState, resetSlideState, resetSubmittedState])
+  */
 
   if (submittedState) return <ThanksPage lineHref={lineHref}/>
 

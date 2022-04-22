@@ -74,7 +74,6 @@ const NextButton = () => {
   const onSubmit = async () => {
     if (!clickable) return
     const response = await handleQuestionnaireData(qaState)
-    console.log(response)
     if (response) setSubmittedState(true)
   }
 
