@@ -1,5 +1,7 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
+import { useEffect } from 'react'
+import { handleSendAccessData } from "@/utils/handleAccessData"
 import { useRecoilValue } from 'recoil'
 import { modalStateAtom } from "@/stores/modalStateAtom"
 import Modal from "@/components/Modal"
@@ -17,6 +19,14 @@ const Home: NextPage = () => {
   const modalState = useRecoilValue(modalStateAtom)
 
   const lineHref = "https://lin.ee/MlAnTvq"
+
+  useEffect(() => {
+    handleSendAccessData({
+      action: 'view',
+      category: 'home',
+      label: ''
+    })
+  }, [])
 
   if (modalState) return (
     <Modal

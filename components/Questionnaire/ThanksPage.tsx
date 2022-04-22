@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import styles from './Questionnaire.module.scss'
-// import { handleSendAccessData } from '@/utils/handleAccessData'
+import { handleSendAccessData } from '@/utils/handleAccessData'
 // import * as gtag from '@/lib/gtag'
 // import { lineHref } from '@/utils'
 
@@ -16,20 +16,13 @@ const variants = {
 }
 
 const ThanksPage = ({ lineHref }: { lineHref: string; }) => {
-  /*
-  const handleClick = (category: string) => {
+  const _onClick = () => {
     handleSendAccessData({
       action: 'click',
-      category: category,
+      category: 'line',
       label: 'thanks'
     })
-    gtag.event({
-      action: 'click',
-      category: category,
-      label: 'thanks' 
-    })
   }
-  */
 
   return (
     <motion.div
@@ -43,7 +36,7 @@ const ThanksPage = ({ lineHref }: { lineHref: string; }) => {
     >
       <h3>ご回答ありがとうございます</h3>
       <p>よろしければLINE公式アカウントの友だち追加もしていただけますと幸いです</p>
-      <a href={lineHref} className={styles.lineButton} target="_blank" rel="noopener noreferrer">
+      <a onClick={_onClick} href={lineHref} className={styles.lineButton} target="_blank" rel="noopener noreferrer">
         <img src="https://scdn.line-apps.com/n/line_add_friends/btn/ja.png" alt="友だち追加" height="60" />
       </a>
     </motion.div>

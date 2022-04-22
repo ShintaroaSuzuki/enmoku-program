@@ -9,7 +9,7 @@ export default function Document() {
         <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png" />
         <link rel="manifest" href="/favicons/site.webmanifest" />
         <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#ffffff" />
-        <meta name="theme-color" content="#F1F5F9" />
+        <meta name="theme-color" content="#ffffff" />
       </Head>
       <body>
         <Main />

@@ -2,12 +2,18 @@ import { VolumeSlash } from 'iconsax-react'
 import { useSetRecoilState } from 'recoil'
 import { modalStateAtom } from "@/stores/modalStateAtom"
 import { ModalProps } from "@/types"
+import { handleSendAccessData } from "@/utils/handleAccessData"
 
 const Modal = ({ items }: ModalProps) => {
   const setModalState = useSetRecoilState(modalStateAtom)
 
   const _onClick = () => {
     setModalState(false)
+    handleSendAccessData({
+      action: 'click',
+      category: 'modal',
+      label: ''
+    })
   }
 
   return (

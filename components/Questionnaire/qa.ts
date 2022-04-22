@@ -7,7 +7,7 @@ const qa: QA[] = [
     required: true,
     placeholder: '山田花子',
     inputType: 'text',
-    answer: []
+    answer: ['']
   },
   {
     title: '感染症対策のため、緊急連絡先(電話番号)を教えてください。',
@@ -15,7 +15,7 @@ const qa: QA[] = [
     required: true,
     placeholder: '09012345678',
     inputType: 'tel',
-    answer: []
+    answer: ['']
   },
   {
     title: 'あなたは屯田西小学校ブラスバンドのOBOGの方ですか？',
