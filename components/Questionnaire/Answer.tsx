@@ -22,33 +22,41 @@ const Answer = () => {
   const contents = useGeneratedContents()
   const page = useSlidePage()
 
-  switch(contents[page].questionType) {
-    case 'select':
-      return (
-        <div className={styles.answerContainer}>
-          {
-            contents[page].choices!.map((v, i) => 
-              <RadioButton
-                key={`choice_${i}`}
-                value={v.value}
-              />
-            )
-          }
-        </div>
-      )
-    case 'textarea':
-      return (
-        <div className={styles.answerContainer}>
-          <TextArea />
-        </div>
-      )
-    case 'input':
-      return (
-        <div className={styles.answerContainer}>
-          <Input />
-        </div>
-      )
+  const AnswerContents = () => {
+    switch(contents[page].questionType) {
+      case 'select':
+        return (
+          <div className={styles.answerContainer}>
+            {
+              contents[page].choices!.map((v, i) => 
+                <RadioButton
+                  key={`choice_${i}`}
+                  value={v.value}
+                />
+              )
+            }
+          </div>
+        )
+      case 'textarea':
+        return (
+          <div className={styles.answerContainer}>
+            <TextArea />
+          </div>
+        )
+      case 'input':
+        return (
+          <div className={styles.answerContainer}>
+            <Input />
+          </div>
+        )
+    }
   }
+
+  return (
+    <>
+      {AnswerContents()}
+    </>
+  )
 }
 
 export default Answer
