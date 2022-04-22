@@ -22,6 +22,23 @@ const qa: QA[] = [
     questionType: 'select',
     multi: false,
     choices: [
+      { 
+        value: 'はい',
+        questions: [
+          {
+            title: '出演はしましたか？',
+            questionType: 'select',
+            multi: false,
+            choices: [
+              { value: 'はい' },
+              { value: 'いいえ' }
+            ],
+            required: true,
+            answer: []
+          }
+        ]
+      },
+      { value: 'いいえ'}
     ],
     required: true,
     answer: []
