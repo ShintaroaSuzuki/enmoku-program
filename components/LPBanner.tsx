@@ -3,7 +3,7 @@ import { Link } from 'iconsax-react'
 
 const LPBanner = () => {
   return (
-    <div className="rounded-md drop-shadow bg-white overflow-hidden my-10">
+    <div className="rounded-md drop-shadow bg-white overflow-hidden my-20">
       <a href='https://enmoku-lp.vercel.app' target='_blank' rel="noopener noreferrer">
         <div className="">
           <Image src='/enmoku_ogp.png' alt='ogp画像' width={320} height={120} layout='fixed' />

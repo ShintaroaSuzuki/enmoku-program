@@ -30,7 +30,7 @@ const Home: NextPage = () => {
   )
 
   return (
-    <div className="flex flex-col items-center mb-10">
+    <div className="flex flex-col items-center pb-10">
       <Head>
         <title>第16回 屯田西小学校 卒業定期演奏会</title>
         <meta name="description" content="第16回 屯田西小学校 卒業定期演奏会" />
@@ -156,9 +156,9 @@ const Home: NextPage = () => {
           ]}
         />
 
-        <Questionnaire />
-
         <LineBanner lineHref={"https://lin.ee/r0j6n8D"}/>
+
+        <Questionnaire />
 
         <LPBanner />
 
