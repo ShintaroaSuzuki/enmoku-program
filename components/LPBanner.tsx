@@ -12,7 +12,7 @@ const LPBanner = () => {
   }
 
   return (
-    <div onClick={_onClick} className="rounded-md drop-shadow bg-white overflow-hidden my-20">
+    <div onClick={_onClick} className="rounded-md drop-shadow bg-white overflow-hidden my-16">
       <a href='https://enmoku-lp.vercel.app' target='_blank' rel="noopener noreferrer">
         <div className="">
           <Image src='/enmoku_ogp.png' alt='ogp画像' width={320} height={120} layout='fixed' />

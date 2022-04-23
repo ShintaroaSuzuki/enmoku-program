@@ -1,11 +1,10 @@
 import dynamic from 'next/dynamic'
 import styles from './Questionnaire.module.scss'
-import { useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import Title from './Title'
 import Answer from './Answer'
-import { useRecoilValue, useResetRecoilState } from 'recoil'
-import { qaStateAtom, slideStateAtom, submittedStateAtom } from './store/atoms'
+import { useRecoilValue } from 'recoil'
+import { slideStateAtom, submittedStateAtom } from './store/atoms'
 
 const NextButton = dynamic(
   () => import('./NextButton'),

@@ -12,7 +12,7 @@ const LineBanner = ({ lineHref }: LineBannerProps) => {
   }
 
   return (
-    <div onClick={_onClick} className="my-20">
+    <div onClick={_onClick} className="my-16">
       <a href={lineHref} target="_blank" rel="noopener noreferrer">
         <Image src='/line_banner.png' alt='line banner' width={320} height={168} quality={100}/>
       </a>
