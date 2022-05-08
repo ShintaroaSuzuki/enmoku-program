@@ -7,7 +7,7 @@ import { RecoilRoot } from 'recoil'
 import { ApolloClient, InMemoryCache, ApolloProvider} from '@apollo/client'
 
 const client = new ApolloClient({
-    uri: 'http://localhost:4000/graphql',
+    uri: process.env.GRAPHQL_ENDPOINT,
     cache: new InMemoryCache()
   })
 
@@ -21,11 +21,11 @@ function MyApp({ Component, pageProps }: AppProps) {
   }, []);
 
   return (
-    <RecoilRoot>
-      <ApolloProvider client={client}>
+    <ApolloProvider client={client}>
+      <RecoilRoot>
         <Component {...pageProps} />
-      </ApolloProvider>
-    </RecoilRoot>
+      </RecoilRoot>
+    </ApolloProvider>
   )
 }
 
