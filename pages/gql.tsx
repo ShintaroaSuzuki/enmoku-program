@@ -9,8 +9,8 @@ const Gql = () => {
   return (
     <div className="flex min-h-screen">
       {
-        data.findAllUser.map((user, i) => (
-          <p key={i}>{user.name}</p>
+        data!.findAllUser.map((user, i) => (
+          <p key={i}>{user!.name}</p>
         ))
       }
     </div>
