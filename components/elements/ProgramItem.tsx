@@ -16,6 +16,12 @@ const ProgramItem = ({ item }: { item: ProgramItemProps }) => {
             { item.name }
           </p>
         )
+      case 'piece':
+        return (
+          <p className="text-sm font-semibold leading-loose">
+            { item.name }
+          </p>
+        )
       default:
         return (
           <p className="text-sm font-semibold leading-loose">
