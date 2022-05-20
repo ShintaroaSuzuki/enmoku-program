@@ -1,95 +1,113 @@
-import type { NextPage } from 'next'
-import Head from 'next/head'
-import { useEffect } from 'react'
-import { handleSendAccessData } from '@/utils/handleAccessData'
-import { useRecoilValue } from 'recoil'
-import { modalStateAtom } from '@/stores/modalStateAtom'
-import Modal from '@/components/Modal'
-import Header from '@/components/Header'
-import Title from '@/components/Title'
-import Footer from '@/components/Footer'
-import Program from '@/components/sections/Program'
-import Profile from '@/components/sections/Profile'
+import type { NextPage } from 'next';
+import Head from 'next/head';
+import { useEffect } from 'react';
+import { handleSendAccessData } from '@/utils/handleAccessData';
+import { useRecoilValue } from 'recoil';
+import { modalStateAtom } from '@/stores/modalStateAtom';
+import Modal from '@/components/Modal';
+import Header from '@/components/Header';
+import Title from '@/components/Title';
+import Footer from '@/components/Footer';
+import Program from '@/components/sections/Program';
+import Profile from '@/components/sections/Profile';
 // import History from '@/components/sections/History'
 // import Greeting from '@/components/sections/Greeting'
-import { Questionnaire } from '@/components/Questionnaire'
-import LineBanner from '@/components/LineBanner'
-import LPBanner from '@/components/LPBanner'
+import { Questionnaire } from '@/components/Questionnaire';
+import LineBanner from '@/components/LineBanner';
+import LPBanner from '@/components/LPBanner';
 
 const Home: NextPage = () => {
-    const modalState = useRecoilValue(modalStateAtom)
+  const modalState = useRecoilValue(modalStateAtom);
 
-    const lineHref = 'https://lin.ee/oN3Xxft'
+  const lineHref = 'https://lin.ee/oN3Xxft';
 
-    useEffect(() => {
-        handleSendAccessData({
-            action: 'view',
-            category: 'home',
-            label: ''
-        })
-    }, [])
+  useEffect(() => {
+    handleSendAccessData({
+      action: 'view',
+      category: 'home',
+      label: ''
+    });
+  }, []);
 
-    if (modalState)
-        return (
-            <Modal
-                items={[
-                    { body: 'マスクの着用をお願いします。' },
-                    { body: '検温のご協力をお願いします。' }
-                ]}
-            />
-        )
-
+  if (modalState)
     return (
-        <div className="flex flex-col items-center pb-10">
-            <Head>
-                <title>new style ~ふるさと~</title>
-                <meta name="description" content="new style ~ふるさと~" />
-            </Head>
+      <Modal
+        items={[
+          { body: 'マスクの着用をお願いします。' },
+          { body: '検温のご協力をお願いします。' },
+          { body: '会場内での飲食はご遠慮ください。' },
+          { body: '写真、動画の撮影はご遠慮ください。' }
+        ]}
+      />
+    );
 
-            <Header
-                title="new style"
-                subtitle="~ふるさと~"
-                links={[
-                    { id: 'program', title: 'プログラム' },
-                    { id: 'profile', title: '出演者' }
-                ]}
-            />
+  return (
+    <div className="flex flex-col items-center pb-10">
+      <Head>
+        <title>new style ~ふるさと~</title>
+        <meta name="description" content="new style ~ふるさと~" />
+      </Head>
 
-            <main className="w-5/6 mt-10 flex flex-col items-center">
-                <Title title={'new style'} subtitle={'~ふるさと~'} />
+      <Header
+        title="new style"
+        subtitle="~ふるさと~"
+        links={[
+          { id: 'program', title: 'プログラム' },
+          { id: 'profile', title: '出演者' }
+        ]}
+      />
 
-                <Program
-                    items={[
-                        { name: '山本 健太郎・須藤 由衣', type: 'message' },
-                        { name: 'エルガー 愛の挨拶Op.12' },
-                        {
-                            name: 'メンデルスゾーン チェロとピアノのソナタ 第2番 Op.58 より'
-                        },
-                        { name: '中村 愛伽', type: 'message' },
-                        { name: 'スカルラッティ ソナタ ホ長調 K.380 L.23' },
-                        { name: 'ショパン ノクターン 第10番 変イ長調 Op.32-2' },
-                        {
-                            name: 'リスト 巡礼の年 第2年への追加「ヴェネツィアとナポリ」より タランテラ S.162'
-                        },
-                        { name: '伊藤 拓朗', type: 'message' },
-                        {
-                            name: 'J.S.バッハ 無伴奏チェロ組曲第一番より プレリュード'
-                        },
-                        { name: 'H.トマジ バラード' },
-                        { name: 'R.ヴィードフ サクス・オ・フン' },
-                        { name: '三本木 力哉', type: 'message' },
-                        { name: 'モーツァルト 幻想曲 ニ短調 K.397' },
-                        {
-                            name: 'ベートーヴェン ピアノソナタ 第2番 イ長調 Op.2-2'
-                        }
-                    ]}
-                />
+      <main className="w-5/6 mt-10 flex flex-col items-center">
+        <Title title={'new style'} subtitle={'~ふるさと~'} />
 
-                <Profile
-                    items={[
-                        {
-                            name: '山本 健太郎',
-                            biography: `北海道札幌市出身。
+        <Program
+          items={[
+            { name: '中村 愛伽', type: 'message' },
+            {
+              name: 'ソナタ ホ長調 K.380 L.23',
+              composer: 'スカルラッティ'
+            },
+            {
+              name: 'ノクターン 第10番 変イ長調 Op.32-2',
+              composer: 'ショパン'
+            },
+            {
+              name: '巡礼の年 第2年への追加「ヴェネツィアとナポリ」より タランテラ S.162',
+              composer: 'リスト'
+            },
+            { name: '伊藤 拓朗', type: 'message' },
+            {
+              name: '無伴奏チェロ組曲第一番より プレリュード',
+              composer: 'J.S.バッハ'
+            },
+            { name: 'バラード', composer: 'H.トマジ' },
+            { name: 'サクス・オ・フン', composer: 'R.ヴィードフ' },
+            { name: '休憩（10分）', type: 'pause' },
+            { name: '山本 健太郎・須藤 由衣', type: 'message' },
+            { name: '愛の挨拶 Op.12', composer: 'エルガー' },
+            {
+              name: 'チェロとピアノのソナタ 第2番 Op.58より',
+              composer: 'メンデルスゾーン'
+            },
+            { name: '三本木 力哉', type: 'message' },
+            {
+              name: '幻想曲 ニ短調 K.397',
+              composer: 'モーツァルト'
+            },
+            {
+              name: 'ピアノソナタ 第2番 イ長調 Op.2-2',
+              composer: 'ベートーヴェン'
+            }
+          ]}
+        />
+
+        <Questionnaire lineHref={lineHref} />
+
+        <Profile
+          items={[
+            {
+              name: '山本 健太郎',
+              biography: `北海道札幌市出身。
 札幌大谷高等学校、東京音楽大学卒業。
 同大学大学院研究科修了。
 東京と北海道を中心に室内楽やオーケストラなどの演奏活動を行なっている。
@@ -97,14 +115,14 @@ const Home: NextPage = () => {
 2021年ザルツブルク＝モーツァルト国際コンクール特別賞。
 これまでにチェロを竹本利郎、石川祐支、Dmitry Feygin、山本裕康の各氏に師事。
 室内楽を大野かおる、苅田雅治、鈴木秀美、百武由紀、諸田由里子、横山俊朗の各氏に師事。`
-                        },
-                        {
-                            name: '須藤 由衣',
-                            biography: `2歳よりピアノを始める。東京音楽大学ピアノ科卒業。2018年同大学の卒業演奏会にて選抜。第31回毎日こどもピアノコンクール金賞及び審査員特別賞、連弾の部優秀賞。第36回ピティナピアノコンペティション連弾上級の部奨励賞。第29回JPTAピアノオーディション地区優秀賞・全国大会入賞。第3回日本バッハコンクール高校生部門ベスト賞。ヨーロッパ国際ピアノコンクール in Japan ジュニア特級II-L部門 ディプロマ賞。ベーテンピアノコンクール連弾の部最優秀賞。これまでにピアノを斉藤香苗、赤松林太郎、三浦捷子、稲田潤子に師事。`
-                        },
-                        {
-                            name: '中村 愛伽',
-                            biography: `北海道札幌市出身。藤女子高等学校を経て、東京音楽大学を卒業。東京音楽大学大学院音楽研究科器楽専攻鍵盤楽器研究領域修士課程を修了。
+            },
+            {
+              name: '須藤 由衣',
+              biography: `2歳よりピアノを始める。東京音楽大学ピアノ科卒業。2018年同大学の卒業演奏会にて選抜。第31回毎日こどもピアノコンクール金賞及び審査員特別賞、連弾の部優秀賞。第36回ピティナピアノコンペティション連弾上級の部奨励賞。第29回JPTAピアノオーディション地区優秀賞・全国大会入賞。第3回日本バッハコンクール高校生部門ベスト賞。ヨーロッパ国際ピアノコンクール in Japan ジュニア特級II-L部門 ディプロマ賞。ベーテンピアノコンクール連弾の部最優秀賞。これまでにピアノを斉藤香苗、赤松林太郎、三浦捷子、稲田潤子に師事。`
+            },
+            {
+              name: '中村 愛伽',
+              biography: `北海道札幌市出身。藤女子高等学校を経て、東京音楽大学を卒業。東京音楽大学大学院音楽研究科器楽専攻鍵盤楽器研究領域修士課程を修了。
 4歳でヤマハ音楽教室へ入室。5歳よりピアノを始める。
 第16回ペトロフピアノコンクール、審査員賞受賞。
 第17回大阪国際音楽コンクールピアノ部門（Age-U）、ファイナル入選。
@@ -119,10 +137,10 @@ const Home: NextPage = () => {
 2013年、2015年に同主催により札幌にてソロリサイタルを開催。
 これまでにピアノを松下恭子、大楽勝美、仲田みずほ、岡田敦子の各氏に師事。2017年よりW.ブロンズのプライベートレッスンを受講。学内にてロナン・オホラ、河村尚子の公開レッスンを受講。
 ピアノデュオ、伴奏法を水谷真理子に師事。室内楽を深山尚久、前田昌利、東海千浪、小川剛一郎、山田武彦の各氏に師事。パイプオルガンを徳岡めぐみに師事。`
-                        },
-                        {
-                            name: '伊藤 拓朗',
-                            biography: `12歳からサクソフォンを始める。
+            },
+            {
+              name: '伊藤 拓朗',
+              biography: `12歳からサクソフォンを始める。
 札幌日本大学高等学校を経て札幌大谷大学芸術学部音楽学科卒業。
 卒業後は国立音楽大学ディプロマコース管打楽器ソリストコースにて学ぶ。
 現在、東京を中心にフリーランス奏者として活動中。
@@ -130,10 +148,10 @@ const Home: NextPage = () => {
 札幌テレビ放送(STV)のテレビ番組「ブギウギ専務」のエンディングにちらっと出演中。
 サクソフォンカルテットにて札幌コンサートホールkitara主催の若い目の音楽会に大学推薦で出演。
 数多くの自主公演コンサートを開催し好評を博す。「Trio MOUSAI」「東京サクソフォーンオーケストラ (TSO)」所属。`
-                        },
-                        {
-                            name: '三本木 力哉',
-                            biography: `北海道小樽市出身。5歳からピアノを始める。
+            },
+            {
+              name: '三本木 力哉',
+              biography: `北海道小樽市出身。5歳からピアノを始める。
 小樽双葉高等学校を経て、札幌大谷大学芸術学部音楽学科ピアノ演奏クラス卒業。
 第25回日本クラシック音楽コンクール全国大会第5位。
 第21回北海道ショパン学生ピアノコンクール金賞、併せて北海道新聞社賞。
@@ -141,11 +159,11 @@ const Home: NextPage = () => {
 中国黒竜江省哈爾浜音楽学院での青少年交流演奏会に出演。ドイツ・シュトゥットガルト音楽学校オーケストラとモーツァルト:ピアノ協奏曲第21番を共演。
 これまで橋本純、青村理恵子、石田敏明、横山幸雄、橘高昌男、植田克己の各氏に師事。
 現在東京藝術大学音楽学部別科ピアノ専攻1年在籍、青柳晋氏に師事。`
-                        }
-                    ]}
-                />
+            }
+          ]}
+        />
 
-                {/*
+        {/*
                 <History
                     items={[
                         {
@@ -230,16 +248,13 @@ const Home: NextPage = () => {
                 />
                 */}
 
-                <LineBanner lineHref={lineHref} />
+        <LineBanner lineHref={lineHref} />
 
-                <Questionnaire lineHref={lineHref} />
+        <LPBanner />
+      </main>
 
-                <LPBanner />
-            </main>
-
-            <Footer />
-        </div>
-    )
-}
-
-export default Home
+      <Footer />
+    </div>
+  );
+};
+export default Home;

@@ -1,48 +1,39 @@
-import dynamic from 'next/dynamic'
-import styles from './Questionnaire.module.scss'
-import { motion, AnimatePresence } from 'framer-motion'
-import Title from './Title'
-import Answer from './Answer'
-import { useRecoilValue } from 'recoil'
-import { slideStateAtom, submittedStateAtom } from './store/atoms'
+import dynamic from 'next/dynamic';
+import styles from './Questionnaire.module.scss';
+import { motion, AnimatePresence } from 'framer-motion';
+import Title from './Title';
+import Answer from './Answer';
+import { useRecoilValue } from 'recoil';
+import { slideStateAtom, submittedStateAtom } from './store/atoms';
 
-const NextButton = dynamic(
-  () => import('./NextButton'),
-  { ssr: false }
-)
+const NextButton = dynamic(() => import('./NextButton'), { ssr: false });
 
-const BackButton = dynamic(
-  () => import('./BackButton'),
-  { ssr: false }
-)
+const BackButton = dynamic(() => import('./BackButton'), { ssr: false });
 
-const ThanksPage = dynamic(
-  () => import('./ThanksPage'),
-  { ssr: false }
-)
+const ThanksPage = dynamic(() => import('./ThanksPage'), { ssr: false });
 
 const variants = {
   enter: (direction: number) => {
     return {
-      x: direction > 0 ? 1000: -1000,
-      opacity: 0,
-    }
+      x: direction > 0 ? 1000 : -1000,
+      opacity: 0
+    };
   },
   center: {
     x: 0,
-    opacity: 1,
+    opacity: 1
   },
   exit: (direction: number) => {
     return {
-      x: direction < 0 ? 1000: -1000,
-      opacity: 0,
-    }
+      x: direction < 0 ? 1000 : -1000,
+      opacity: 0
+    };
   }
-}
+};
 
-export const Slide = ({ lineHref }: { lineHref: string; }) => {
-  const slideState = useRecoilValue(slideStateAtom)
-  const submittedState = useRecoilValue(submittedStateAtom)
+export const Slide = ({ lineHref }: { lineHref: string }) => {
+  const slideState = useRecoilValue(slideStateAtom);
+  const submittedState = useRecoilValue(submittedStateAtom);
 
   /*
   const resetQaState = useResetRecoilState(qaStateAtom)
@@ -56,14 +47,11 @@ export const Slide = ({ lineHref }: { lineHref: string; }) => {
   }, [resetQaState, resetSlideState, resetSubmittedState])
   */
 
-  if (submittedState) return <ThanksPage lineHref={lineHref}/>
+  if (submittedState) return <ThanksPage lineHref={lineHref} />;
 
   return (
     <div className={styles.slideWrapper}>
-      <AnimatePresence
-        initial={false}
-        custom={slideState.direction}
-      >
+      <AnimatePresence initial={false} custom={slideState.direction}>
         <motion.div
           className={styles.slideContainer}
           key={slideState.page}
@@ -73,17 +61,17 @@ export const Slide = ({ lineHref }: { lineHref: string; }) => {
           animate="center"
           exit="exit"
           transition={{
-            x: { type: 'spring', stiffness: 300, damping: 30},
+            x: { type: 'spring', stiffness: 300, damping: 30 },
             opacity: { duration: 0.2 }
           }}
         >
-          <h3 className={styles.questionLabel}>{`Q${slideState.page+1}`}</h3>
+          <h3 className={styles.questionLabel}>{`Q${slideState.page + 1}`}</h3>
           <Title />
           <Answer />
           <BackButton />
-          <NextButton/>
+          <NextButton />
         </motion.div>
       </AnimatePresence>
     </div>
-  )
-}
+  );
+};

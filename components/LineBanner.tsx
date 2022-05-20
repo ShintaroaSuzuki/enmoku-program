@@ -1,6 +1,6 @@
-import Image from 'next/image'
-import { LineBannerProps } from "@/types"
-import { handleSendAccessData } from "@/utils/handleAccessData"
+import Image from 'next/image';
+import { LineBannerProps } from '@/types';
+import { handleSendAccessData } from '@/utils/handleAccessData';
 
 const LineBanner = ({ lineHref }: LineBannerProps) => {
   const _onClick = () => {
@@ -8,16 +8,22 @@ const LineBanner = ({ lineHref }: LineBannerProps) => {
       action: 'click',
       category: 'line',
       label: 'home'
-    })
-  }
+    });
+  };
 
   return (
-    <div onClick={_onClick} className="my-16">
+    <div onClick={_onClick} data-aos="fade-up" className="my-16">
       <a href={lineHref} target="_blank" rel="noopener noreferrer">
-        <Image src='/line_banner.png' alt='line banner' width={320} height={168} quality={100}/>
+        <Image
+          src="/line_banner.png"
+          alt="line banner"
+          width={320}
+          height={168}
+          quality={100}
+        />
       </a>
     </div>
-  )
-}
+  );
+};
 
-export default LineBanner
+export default LineBanner;
