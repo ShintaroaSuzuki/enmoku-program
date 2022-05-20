@@ -1,8 +1,10 @@
 export type Link = {
-  id: string;
-  title: string;
+    id: string
+    title: string
 }
 
 export type HeaderProps = {
-  links: Link[]
+    links: Link[]
+    title: string
+    subtitle?: string
 }
